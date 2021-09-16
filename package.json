@@ -1,0 +1,41 @@
+{
+  "name": "stitches-normalize-css",
+  "version": "1.0.0",
+  "author": "Paul Simon Ongpin <paulsimon.ongpin@gmail.com>",
+  "license": "MIT",
+  "description": "Normalize CSS for stitches",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/psongpin/stitches-normalize-css.git"
+  },
+  "bugs": "https://github.com/psongpin/stitches-normalize-css/issues",
+  "keywords": [
+    "css",
+    "reset",
+    "reset.css",
+    "normalize",
+    "normalize.css",
+    "stitches",
+    "css-in-js"
+  ],
+  "main": "lib/index.js",
+  "module": "lib/esm/index.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "build": "tsc && tsc -p tsconfig.esm.json",
+    "prebuild": "rm -rf lib && mkdir -p lib",
+    "test": "echo \"No test specified\"",
+    "prepare": "husky install"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^13.1.0",
+    "@commitlint/config-conventional": "^13.1.0",
+    "husky": "^6.0.0",
+    "lint-staged": "^11.1.2",
+    "prettier": "^2.4.0",
+    "typescript": "^4.4.3"
+  }
+}
