@@ -4,7 +4,7 @@
 
 [Normalize CSS](https://necolas.github.io/normalize.css/) for [stitches](https://github.com/modulz/stitches).
 
-[Demo on CodeSandbox](https://codesandbox.io/s/zealous-hopper-5npr0?file=/src/App.tsx).
+[Demo on CodeSandbox](https://codesandbox.io/s/stitches-normalize-css-gt6tp).
 
 ---
 
