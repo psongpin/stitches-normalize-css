@@ -18,6 +18,8 @@ or
 
 ## Usage:
 
+#### Adding `reset` to `globalCss`
+
 ```jsx
 import * as React from 'react'
 import { reset } from 'stitches-normalize-css'
@@ -52,6 +54,32 @@ const globalStyles = globalCss(reset)
 const App: React.FC = () => {
   globalStyles()
   return <div>App</div>
+}
+```
+
+#### Adding custom global styles on top of `reset`
+
+```jsx
+import * as React from 'react'
+import type * as Stitches from '@stitches/react';
+import { reset } from 'stitches-normalize-css'
+import { globalCss } from 'path-to/stitches.config.ts'
+
+const customGlobalStyles: Record<string, Stitches.CSS> = {
+  ".App": {
+    backgroundColor: "papayawhip"
+  },
+  body: {
+    border: "2px solid red",
+    minHeight: "100vh"
+  }
+};
+
+const globalStyles = globalCss(reset, customGlobalStyles);
+
+const App: React.FC = () => {
+  globalStyles()
+  return <div className="App">App</div>
 }
 ```
 
