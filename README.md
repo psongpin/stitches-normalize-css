@@ -1,6 +1,6 @@
 # stitches-normalize-css
 
-![issues](https://img.shields.io/github/issues/psongpin/stitches-normalize-css)
+![GitHub release](https://img.shields.io/github/v/release/psongpin/stitches-normalize-css.svg) ![issues](https://img.shields.io/github/issues/psongpin/stitches-normalize-css)
 
 [Normalize CSS](https://necolas.github.io/normalize.css/) for [stitches](https://github.com/modulz/stitches).
 
