@@ -1,129 +1,78 @@
-export const reset = {
-  html: {
-    lineHeight: 1.15,
-    '-webkit-text-size-adjust': '100%',
-  },
-  body: {
-    margin: 0,
-  },
-  main: {
-    display: 'block',
-  },
-  h1: {
+export const normalize = {
+  ':where(html)': { lineHeight: 1.15 },
+  ':where(h1)': {
     fontSize: '2em',
-    margin: '0.67em 0',
+    marginBlockEnd: '0.67em',
+    marginBlockStart: '0.67em',
   },
-  hr: {
-    boxSizing: 'content-box',
-    height: 0,
-    overflow: 'visible',
+  ':where(dl, ol, ul) :where(dl, ol, ul)': {
+    marginBlockEnd: '0',
+    marginBlockStart: '0',
   },
-  pre: {
+  ':where(hr)': { boxSizing: 'content-box', color: 'inherit', height: '0' },
+  ':where(pre)': { fontFamily: 'monospace, monospace', fontSize: '1em' },
+  ':where(abbr[title])': {
+    textDecoration: 'underline',
+    // textDecoration: 'underline dotted',
+  },
+  ':where(b, strong)': { fontWeight: 'bolder' },
+  ':where(code, kbd, samp)': {
     fontFamily: 'monospace, monospace',
     fontSize: '1em',
   },
-  a: {
-    backgroundColor: 'transparent',
+  ':where(small)': { fontSize: '80%' },
+  ':where(table)': { borderColor: 'currentColor', textIndent: '0' },
+  ':where(button, input, select)': { margin: '0' },
+  ':where(button)': { textTransform: 'none' },
+  ':where(button, input:is([type="button" i], [type="reset" i], [type="submit" i]))':
+    {
+      WebkitAppearance: 'button',
+    },
+  ':where(progress)': { verticalAlign: 'baseline' },
+  ':where(select)': { textTransform: 'none' },
+  ':where(textarea)': { margin: '0' },
+  ':where(input[type="search" i])': {
+    WebkitAppearance: 'textfield',
+    outlineOffset: '-2px',
   },
-  'abbr[title]': {
-    borderBottom: 'none',
-    textDecoration: 'underline dotted',
+  '::-webkit-inner-spin-button, ::-webkit-outer-spin-button': {
+    height: 'auto',
   },
-  'b, strong': {
-    fontWeight: 'bolder',
+  '::-webkit-input-placeholder': { color: 'inherit', opacity: 0.54 },
+  '::-webkit-search-decoration': { WebkitAppearance: 'none' },
+  '::-webkit-file-upload-button': {
+    WebkitAppearance: 'button',
+    font: 'inherit',
   },
-  'code, kbd, samp': {
-    fontFamily: 'monospace, monospace',
-    fontSize: '1em',
-  },
-  small: {
-    fontSize: '80%',
-  },
-  'sub, sup': {
-    fontSize: '75%',
-    lineHeight: 0,
-    position: 'relative',
-    verticalAlign: 'baseline',
-  },
-  sub: {
-    bottom: '-0.25em',
-  },
-  sup: {
-    top: '-0.5em',
-  },
-  img: {
-    borderStyle: 'none',
-  },
-  'button, input, optgroup, select, textarea': {
-    fontFamily: 'inherit',
-    fontSize: '100%',
-    lineHeight: 1.15,
-    margin: 0,
-  },
-  'button, input': {
-    overflow: 'visible',
-  },
-  'button, select': {
-    textTransform: 'none',
-  },
-  'button, [type="button"], [type="reset"], [type="submit"]': {
-    '-webkit-appearance': 'button',
-  },
-  'button::-moz-focus-inner, [type="button"]::-moz-focus-inner, [type="reset"]::-moz-focus-inner, [type="submit"]::-moz-focus-inner':
+  ':where(button, input:is([type="button" i], [type="color" i], [type="reset" i], [type="submit" i]))::-moz-focus-inner':
     {
       borderStyle: 'none',
-      padding: 0,
+      padding: '0',
     },
-  'button:-moz-focusring, [type="button"]:-moz-focusring, [type="reset"]:-moz-focusring, [type="submit"]:-moz-focusring':
+  ':where(button, input:is([type="button" i], [type="color" i], [type="reset" i], [type="submit" i]))::-moz-focusring':
     {
       outline: '1px dotted ButtonText',
     },
-  fieldset: {
-    padding: '0.35em 0.75em 0.625em',
+  ':where(:-moz-ui-invalid)': { boxShadow: 'none' },
+  ':where(dialog)': {
+    backgroundColor: 'white',
+    border: 'solid',
+    color: 'black',
+    // height: '-moz-fit-content',
+    height: 'fit-content',
+    left: '0',
+    margin: 'auto',
+    padding: '1em',
+    position: 'absolute',
+    right: '0',
+    // width: '-moz-fit-content',
+    width: 'fit-content',
   },
-  legend: {
-    boxSizing: 'border-box',
-    color: 'inherit',
-    display: 'table',
-    maxWidth: '100%',
-    padding: 0,
-    whiteSpace: 'normal',
-  },
-  progress: {
-    verticalAlign: 'baseline',
-  },
-  textarea: {
-    overflow: 'auto',
-  },
-  '[type="checkbox"], [type="radio"]': {
-    boxSizing: 'border-box',
-    padding: 0,
-  },
-  '[type="number"]::-webkit-inner-spin-button, [type="number"]::-webkit-outer-spin-button':
-    {
-      height: 'auto',
-    },
-  '[type="search"]': {
-    '-webkit-appearance': 'textfield',
-    outlineOffset: -2,
-  },
-  '[type="search"]::-webkit-search-decoration': {
-    '-webkit-appearance': 'none',
-  },
-  '::-webkit-file-upload-button': {
-    '-webkit-appearance': 'button',
-    font: 'inherit',
-  },
-  details: {
-    display: 'block',
-  },
-  summary: {
-    display: 'list-item',
-  },
-  template: {
-    display: 'none',
-  },
-  '[hidden]': {
-    display: 'none',
-  },
+  ':where(dialog:not([open]))': { display: 'none' },
+  ':where(summary)': { display: 'list-item' },
+}
+
+export const opinionated = {
+  ...normalize,
+  ':where(body)': { margin: '0' },
 }

@@ -2,7 +2,7 @@
 
 ![GitHub release](https://img.shields.io/github/v/release/psongpin/stitches-normalize-css.svg) ![issues](https://img.shields.io/github/issues/psongpin/stitches-normalize-css)
 
-[Normalize CSS](https://necolas.github.io/normalize.css/) for [stitches](https://github.com/modulz/stitches).
+[Normalize CSS](https://github.com/csstools/normalize.css/) for [stitches](https://github.com/modulz/stitches).
 
 [Demo on CodeSandbox](https://codesandbox.io/s/stitches-normalize-css-gt6tp).
 
@@ -18,11 +18,17 @@ or
 
 ## Usage:
 
-#### Adding `reset` to `globalCss`
+#### Adding `normalize` or `opinionated` to `globalCss`
+
+Normalize CSS rules [here](https://github.com/csstools/normalize.css/blob/main/normalize.css)
+
+Opinionated CSS rules [here](https://github.com/csstools/normalize.css/blob/main/opinionated.css)
 
 ```jsx
 import * as React from 'react'
-import { reset } from 'stitches-normalize-css'
+import { normalize } from 'stitches-normalize-css'
+// if you want to use the opinionated one, import opinionated instead of normalize
+// import { opinionated } from 'stitches-normalize-css'
 import { globalCss } from 'path-to/stitches.config.ts'
 
 // path-to/stitches.config.js - Sample stitches config
@@ -49,7 +55,7 @@ export const {
 })
 */
 
-const globalStyles = globalCss(reset)
+const globalStyles = globalCss(normalize)
 
 const App: React.FC = () => {
   globalStyles()
@@ -57,12 +63,12 @@ const App: React.FC = () => {
 }
 ```
 
-#### Adding custom global styles on top of `reset`
+#### Adding custom global styles on top of `normalize`
 
 ```jsx
 import * as React from 'react'
 import type * as Stitches from '@stitches/react';
-import { reset } from 'stitches-normalize-css'
+import { normalize } from 'stitches-normalize-css'
 import { globalCss } from 'path-to/stitches.config.ts'
 
 const customGlobalStyles: Record<string, Stitches.CSS> = {
@@ -75,7 +81,7 @@ const customGlobalStyles: Record<string, Stitches.CSS> = {
   }
 };
 
-const globalStyles = globalCss(reset, customGlobalStyles);
+const globalStyles = globalCss(normalize, customGlobalStyles);
 
 const App: React.FC = () => {
   globalStyles()
@@ -85,4 +91,4 @@ const App: React.FC = () => {
 
 ## Credits
 
-All credit goes to [Nicolas Gallagher](https://github.com/necolas) for [Normalize CSS](https://necolas.github.io/normalize.css/).
+All credit goes to [CSS Tools](https://github.com/csstools) for [Normalize CSS](https://github.com/csstools/normalize.css/).
