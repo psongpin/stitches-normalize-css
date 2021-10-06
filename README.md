@@ -55,7 +55,7 @@ export const {
 })
 */
 
-const globalStyles = globalCss(normalize)
+const globalStyles = globalCss(...normalize)
 
 const App: React.FC = () => {
   globalStyles()
@@ -81,7 +81,7 @@ const customGlobalStyles: Record<string, Stitches.CSS> = {
   }
 };
 
-const globalStyles = globalCss(normalize, customGlobalStyles);
+const globalStyles = globalCss(...normalize, customGlobalStyles);
 
 const App: React.FC = () => {
   globalStyles()
